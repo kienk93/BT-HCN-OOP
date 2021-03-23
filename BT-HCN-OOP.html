@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fs</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<canvas width="550px" height="550px" id="mycanvas"></canvas>
+
+</body>
+<script>
+    let rectangle = function (chieuDai, chieuRong) {
+        this.chieuDai = chieuDai;
+        this.chieuRong = chieuRong;
+        this.getChieuDai = function () {
+            return chieuDai;
+        }
+        this.getChieuRong = function () {
+            return chieuRong;
+        }
+        this.tinhChuVi = function () {
+            return (chieuDai + chieuRong) * 2;
+        }
+        this.tinhDienTich = function () {
+            return chieuDai * chieuRong;
+        }
+        this.veHinhChuNhat = function (x,y,chieuDai,chieuRong) {
+          // Get the canvas element using the DOM
+          let canvas = document.getElementById('mycanvas');
+          if (canvas.getContext) {
+            let ctx = canvas.getContext('2d');
+            ctx.strokeRect(x, y, chieuDai * 10, chieuRong * 10);
+          }
+
+      }
+    }
+    let HinhChuNhat1 = new rectangle(5, 4)
+    let chieuDai = HinhChuNhat1.getChieuDai()
+    let chieuRong = HinhChuNhat1.getChieuRong()
+    let chuViHinh1 = HinhChuNhat1.tinhChuVi()
+    let dienTichHinh1 = HinhChuNhat1.tinhDienTich()
+    HinhChuNhat1.veHinhChuNhat(50,50,5,4)
+
+    alert('Hình chữ nhật 1 có ' + ' chiều dài :' + chieuDai + ' chiều rộng :' + chieuRong
+        + ' Chu vi :' + chuViHinh1 + ' Diện tích : ' + dienTichHinh1)
+
+
+    let HinhChuNhat2 = new rectangle(10, 5)
+    let chieuDai2 = HinhChuNhat2.getChieuDai()
+    let chieuRong2 = HinhChuNhat2.getChieuRong()
+    let chuViHinh2 = HinhChuNhat2.tinhChuVi()
+    let dienTichHinh2 = HinhChuNhat2.tinhDienTich()
+    HinhChuNhat2.veHinhChuNhat(150,50,10,5)
+    alert('Hình chữ nhật 2 có ' + ' chiều dài :' + chieuDai2 + ' chiều rộng :' + chieuRong2
+        + ' Chu vi :' + chuViHinh2 + ' Diện tích : ' + dienTichHinh2)
+
+
+    let HinhChuNhat3 = new rectangle(20,10)
+    let chieuDai3 = HinhChuNhat3.getChieuDai()
+    let chieuRong3 = HinhChuNhat3.getChieuRong()
+    let chuViHinh3 = HinhChuNhat3.tinhChuVi()
+    let dienTichHinh3 = HinhChuNhat3.tinhDienTich()
+    HinhChuNhat3.veHinhChuNhat(300,50,20,10)
+    alert('Hình chữ nhật 3 có ' + ' chiều dài :' + chieuDai3 + ' chiều rộng :' + chieuRong3
+            + ' Chu vi :' + chuViHinh3 + ' Diện tích : ' + dienTichHinh3)
+
+</script>
+</html>
